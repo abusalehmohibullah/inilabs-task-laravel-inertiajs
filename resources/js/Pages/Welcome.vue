@@ -8,6 +8,7 @@ import { Head } from '@inertiajs/vue3';
     <AppLayout>
     <Head title="Welcome" />
 
+    <Div>Hello World</Div>
 
     </AppLayout>
 </template>
