@@ -10,7 +10,7 @@ import ToastMessage from '../Components/ToastMessage.vue';
     <div>
 
         <Head :title="title" />
-<ToastMessage/>
+        <ToastMessage />
         <div class="min-h-screen flex flex-row flex-auto flex-shrink-0 bg-gray-50 text-gray-800">
             <aside>
                 <Sidebar />
@@ -23,11 +23,10 @@ import ToastMessage from '../Components/ToastMessage.vue';
                     <div class="text-2xl font-bold mb-4 w-full">
                         <slot name="header" />
                     </div>
-                    <slot name="main"/>
+                    <slot name="main" />
                 </main>
             </div>
 
         </div>
     </div>
 </template>
-
