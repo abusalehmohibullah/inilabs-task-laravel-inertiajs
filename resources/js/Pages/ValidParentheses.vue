@@ -10,6 +10,10 @@ const form = useForm({
   parentheses_input: '',
 });
 
+const props = defineProps({
+    isValid: String
+});
+
 const validateParentheses = () => {
   form.post(route('valid-parentheses.validate'), {
     preserveScroll: true,
@@ -30,11 +34,12 @@ const validateParentheses = () => {
         <FormSection @submitted="validateParentheses">
           <template #heading>
             Validate Parentheses
+            <div v-if="props.isValid != null" class="absolute top-0 right-0" :class="{ 'text-green-700': props.isValid, 'text-red-700': !props.isValid,  }">
+              <i v-if="props.isValid" class="bi bi-check-circle-fill"></i>
+              <i v-else class="bi bi-x-circle-fill"></i>
+              {{ props.isValid ? 'Valid' : 'Invalid'}}
+            </div>
           </template>
-          <div v-if="validity !== null">
-            <p v-if="validity">The parentheses are valid.</p>
-            <p v-else>The parentheses are invalid.</p>
-          </div>
           <template #form>
             <InputLabel for="parentheses-input" value="Enter Parentheses" />
             <TextInput id="parentheses-input" v-model="form.parentheses_input" required class="block w-full" type="text"

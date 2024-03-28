@@ -9,7 +9,7 @@ use App\Shapes\Rectangle;
 
 class CalculateAreaController extends Controller
 {
-    public function show()
+    public function showForm()
     {
         return Inertia::render('CalculateArea');
     }
@@ -36,7 +36,5 @@ class CalculateAreaController extends Controller
         return Inertia::render('CalculateArea', [
             'area' => $area,
         ]);
-        // return redirect()->route('calculate-area.show')->with('toastMessage', $message)->with('toastStyle', 'success');
-
     }
 }

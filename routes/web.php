@@ -21,7 +21,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/valid-parentheses', [ValidParenthesesController::class, 'show'])->name('valid-parentheses.show');
-Route::post('/valid-parentheses/validate', [ValidParenthesesController::class, 'validateParentheses'])->name('valid-parentheses.validate');
-Route::get('/calculate-area', [CalculateAreaController::class, 'show'])->name('calculate-area.show');
+Route::get('/valid-parentheses', [ValidParenthesesController::class, 'showForm'])->name('valid-parentheses.show');
+Route::post('/valid-parentheses', [ValidParenthesesController::class, 'validateParentheses'])->name('valid-parentheses.validate');
+Route::get('/calculate-area', [CalculateAreaController::class, 'showForm'])->name('calculate-area.show');
 Route::post('/calculate-area', [CalculateAreaController::class, 'calculateArea'])->name('calculate-area.calculate');

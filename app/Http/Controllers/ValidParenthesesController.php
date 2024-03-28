@@ -7,7 +7,7 @@ use Inertia\Inertia;
 
 class ValidParenthesesController extends Controller
 {
-    public function show()
+    public function showForm()
     {
         return Inertia::render('ValidParentheses');
     }
@@ -15,19 +15,18 @@ class ValidParenthesesController extends Controller
     public function validateParentheses(Request $request)
     {
         $input = $request->input('parentheses_input');
-
+        if (!preg_match('/^[()\[\]{}]*$/', $input)) {
+            return redirect()->back()->withInput()->with('toastMessage', "Only '(', ')', '{', '}', '[' and ']' characters are allowed!")->with('toastStyle', 'danger');
+        }
         $isValid = $this->isValidParentheses($input);
 
-        if ($isValid) {
-            return redirect()->route('valid-parentheses.show')->with('toastMessage', 'The parentheses input is valid!')->with('toastStyle', 'success');
-        } else {
-            return redirect()->back()->withInput()->with('toastMessage', 'Invalid parentheses input!')->with('toastStyle', 'danger');
-        }
-        
+        return Inertia::render('ValidParentheses', [
+            'isValid' => $isValid,
+        ]);
     }
 
     private function isValidParentheses($input)
-{
+    {
         $stack = [];
         $mapping = [
             '(' => ')',

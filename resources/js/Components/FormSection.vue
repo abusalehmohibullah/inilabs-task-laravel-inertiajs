@@ -18,7 +18,7 @@ const hasActions = computed(() => !! useSlots().actions);
                 class="px-4 py-3 bg-slate-100 sm:p-6 shadow"
                 :class="hasActions ? 'sm:rounded-tl-md sm:rounded-tr-md' : 'sm:rounded-md'"
                 >
-                <div class="text-xl mb-5 font-semibold">
+                <div class="text-xl mb-5 font-semibold relative">
                     <slot name="heading"/>
                 </div>
                     <!-- <div class="grid grid-cols-6 gap-6"> -->
