@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalculateAreaController;
 use App\Http\Controllers\ValidParenthesesController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,3 +23,5 @@ Route::get('/', function () {
 
 Route::get('/valid-parentheses', [ValidParenthesesController::class, 'show'])->name('valid-parentheses.show');
 Route::post('/valid-parentheses/validate', [ValidParenthesesController::class, 'validateParentheses'])->name('valid-parentheses.validate');
+Route::get('/calculate-area', [CalculateAreaController::class, 'show'])->name('calculate-area.show');
+Route::post('/calculate-area', [CalculateAreaController::class, 'calculateArea'])->name('calculate-area.calculate');

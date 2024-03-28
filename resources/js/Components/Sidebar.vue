@@ -33,6 +33,15 @@ import NavLink from './NavLink.vue';
                         Valid Parentheses
                     </template>
                 </NavLink>
+                <NavLink :href="route('calculate-area.show')" :active="route().current('calculate-area.show')">
+                    <template #icon>
+                        <i class="bi bi-calculator"></i>
+                    </template>
+                    
+                    <template #name>
+                        Calculate Area
+                    </template>
+                </NavLink>
             </ul>
         </div>
     </div>
