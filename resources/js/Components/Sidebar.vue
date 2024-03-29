@@ -24,7 +24,7 @@ import NavLink from './NavLink.vue';
                         Home
                     </template>
                 </NavLink>
-                <NavLink :href="route('valid-parentheses.show')" :active="route().current('valid-parentheses.show')">
+                <NavLink :href="route('valid-parentheses.show-form')" :active="route().current('valid-parentheses.show-form')">
                     <template #icon>
                         <i class="bi bi-braces"></i>
                     </template>
@@ -33,13 +33,22 @@ import NavLink from './NavLink.vue';
                         Valid Parentheses
                     </template>
                 </NavLink>
-                <NavLink :href="route('calculate-area.show')" :active="route().current('calculate-area.show')">
+                <NavLink :href="route('calculate-area.show-form')" :active="route().current('calculate-area.show-form')">
                     <template #icon>
                         <i class="bi bi-calculator"></i>
                     </template>
                     
                     <template #name>
                         Calculate Area
+                    </template>
+                </NavLink>
+                <NavLink :href="route('to-dos.index')" :active="route().current('to-dos.*')">
+                    <template #icon>
+                        <i class="bi bi-list-task"></i>
+                    </template>
+                    
+                    <template #name>
+                        To-Dos
                     </template>
                 </NavLink>
             </ul>
